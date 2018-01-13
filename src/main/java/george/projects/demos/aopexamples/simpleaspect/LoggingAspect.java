@@ -26,12 +26,12 @@ public class LoggingAspect {
 	/***
 	 * Special case that demonstrates proxy objects with AOP
 	 *
-	 * Even though this advice points to the valid method {@link SimpleService#methodThatIsNotAdvised}, it will not be called if that
+	 * Even though this advice points to the valid method {@link SimpleService#methodThatIsNotAdvisedIfCalledFromWithinTheService}, it will not be called if that
 	 * method is called from within SimpleService and not from outside the class
 	 *
-	 * See doc for {@link SimpleService#methodThatIsNotAdvised} for a more detailed explanation
+	 * See doc for {@link SimpleService#methodThatIsNotAdvisedIfCalledFromWithinTheService} for a more detailed explanation
 	 */
-	@Before("execution(* methodThatIsNotAdvised())")
+	@Before("execution(* methodThatIsNotAdvisedIfCalledFromWithinTheService())")
 	public void thisMethodWillNotBeCalled() {
 		LOG.info("This line is be logged only when the method is called from outside the class");
 	}

@@ -35,7 +35,7 @@ public class ApplicationController {
 	@RequestMapping(value = "/directlyCallMethodThatIsNotAdvised")
 	@ResponseBody
 	public String controllerDirectlyCallsServiceMethodThatIsNotAdvised () {
-		return simpleService.methodThatIsNotAdvised();
+		return simpleService.methodThatIsNotAdvisedIfCalledFromWithinTheService();
 	}
 
 	@RequestMapping(value = "/beforeAndAfter")

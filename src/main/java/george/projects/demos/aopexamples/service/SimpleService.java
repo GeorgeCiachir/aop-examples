@@ -20,7 +20,7 @@ public class SimpleService {
 	 * Special case that demonstrates proxy objects with AOP
 	 */
 	public String callMethodThatIsNotAdvised() {
-		return methodThatIsNotAdvised();
+		return methodThatIsNotAdvisedIfCalledFromWithinTheService();
 	}
 
 	/**
@@ -35,7 +35,7 @@ public class SimpleService {
 	 * If the this method is called from within this class, the call does not go through the proxy, therefore the corresponding
 	 * method on the {@link LoggingAspect} annotated class will not be called
 	 */
-	public String methodThatIsNotAdvised() {
+	public String methodThatIsNotAdvisedIfCalledFromWithinTheService() {
 		return "This method is not discovered by the LoggingAspect";
 	}
 
